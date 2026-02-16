@@ -9,5 +9,13 @@ class TranslateRequest(BaseModel):
 
 @router.post("/")
 def translate(req: TranslateRequest):
-    return {"translated_text": f"[mock:{req.target_lang}] {req.text}"}
+    # Mock implementation (replace with API call later)
+    return {
+        "original_text": req.text,
+        "target_lang": req.target_lang,
+        "translated_text": f"[translated to {req.target_lang}] {req.text}"
+    }
+
+
+
 
