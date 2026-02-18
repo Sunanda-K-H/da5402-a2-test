@@ -1,13 +1,16 @@
 from fastapi import FastAPI
-from app.routers import translation, image_gen, ner, speech
+from app.ner import router as ner_router
+from app.tts import router as tts_router
 
-app = FastAPI(title="Collaborative AI Microservice (TEST REPO)")
+app = FastAPI(
+    title="Multi-Modal AI API",
+    description="Translation, Image Generation, NER, Speech Synthesis",
+    version="1.0"
+)
 
-app.include_router(translation.router)
-app.include_router(image_gen.router)
-app.include_router(ner.router)
-app.include_router(speech.router)
+app.include_router(ner_router)
+app.include_router(tts_router)
 
-@app.get("/health")
-def health():
-    return {"status":"ok"}
+@app.get("/")
+def home():
+    return {"message": "Multi-Modal AI Service Running"}
