@@ -1,3 +1,10 @@
 fastapi
 uvicorn
 pydantic
+requests
+stability-sdk
+Pillow
+transformers
+torch
+sentencepiece
+sacremoses
