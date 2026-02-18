@@ -1,7 +1,10 @@
 fastapi
 uvicorn
-spacy
+pydantic
+requests
+stability-sdk
+Pillow
 transformers
 torch
-gtts
-python-multipart
+sentencepiece
+sacremoses
